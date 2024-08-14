@@ -1,11 +1,13 @@
-#Faça um Programa que verifique se uma letra digitada é "F" ou "M". Conforme a letra escrever:
+# Faça um Programa que verifique se uma letra digitada é "F" ou "M". Conforme a letra escrever:
 # F - Feminino, M - Masculino, Sexo Inválido.
 
-cha = input("type a letter" )
-if cha == 'f':
+cha = input("type a letter:\n>>> ")
+
+if cha.upper() == "F":
     print("the person is female")
 
-elif cha == 'm':
+elif cha.upper() == "M":
     print("the person is male")
+
 else:
-    print("not valid")
+    print("Invalid input. Try typing 'F' or 'M'")
