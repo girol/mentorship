@@ -5,12 +5,11 @@
 
 alpha = input("type a letter here")
 
-if (alpha == 'a'or alpha == 'e'or alpha == 'i'or alpha =='o' or alpha == 'u'):
-    print("the letter you typed is vowel")
+VOWELS = ["a", "e", "i", "o", "u"]
 
-elif (alpha == "w" or alpha == "y"):
-    print("the letter you typed is semi vowel")
+if alpha in VOWELS:
+    print("the letter you typed is vowel")
 
 else:
     print("the letter you typed is consonant")
-    
+ 
