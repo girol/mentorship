@@ -1,18 +1,32 @@
- #do a program that asks which shift you study.
-   #Ask to enter M-morning or V-Evening or N-Night. Print the message "Good Morning!", 
- #"Good Afternoon!" or "Good Night!" or "Invalid Value!", as applicable.."""
+"""
+Create a program that asks which shift you study.
+Ask to enter one of:
+ M - morning
+ V - Evening
+ N - Night.
 
-Shift = input("\n which shift do you study enter (M for morning, V for Evening, N for night)>>?").strip().lower()
-    
-if Shift == "m":
-  print("Good morning ! ")
+Print the message:
+"Good Morning!", "Good Afternoon!" or "Good Night!"
+or "Invalid Value!", as applicable.
+"""
 
-elif Shift == "v":
-  print("Good Evening !")
+shift = (
+    input(
+        "Which shift do you study enter (M for morning, V for Evening, N for night)? \n>> "
+    )
+    .strip()
+    .upper()
+)
 
-elif Shift == "n":
-  print("Good night !")
-  
+if shift == "M":
+    print("Good morning!")
 
-else :
-  print("Invalid !")
+elif shift == "V":
+    print("Good Evening!")
+
+elif shift == "N":
+    print("Good night!")
+
+
+else:
+    print("Invalid !")
