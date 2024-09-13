@@ -1,11 +1,18 @@
-"""Current Account Class: Create a class to implement a current account. 
-The class must have the following attributes: account number, account holder name and balance.
- The methods are as follows: changeName, deposit and withdrawal; 
- In the constructor, balance is optional, with a default value of zero and the other attributes are mandatory."""
+"""Current Account Class: Create a class to implement a current account.
+The class must have the following attributes: account number,
+account holder name and balance.
+The methods are as follows:
+ - changeName
+ - deposit
+ - withdrawal
+
+In the constructor, balance is optional, with a default value of zero
+and the other attributes are mandatory.
+ """
 
 
 class CurrentAccount:
-    def __init__(self, account_number, account_holder_name, balance=2000):
+    def __init__(self, account_number, account_holder_name, balance=0):
         self.account_number = account_number
         self.account_holder_name = account_holder_name
         self.balance = balance
@@ -16,25 +23,16 @@ class CurrentAccount:
     def deposit(self, amount):
         if amount > 0:
             self.balance = self.balance + int(amount)
-            print(f"Deposit{amount}, new balance {self.balance}")
+            print(f"Deposit: ${amount}, New Balance: {self.balance}")
         else:
-            print("Deposit amount must be positive")
+            print("ERROR: Deposit amount must be positive")
 
     def withdrawal(self, amount):
         if amount > 0:
-            if amount - self.balance:
-                print(f"withdraw{amount}, New balance is {self.balance}")
+            if amount > self.balance:
+                print("ERROR: Insuffecient funds!")
             else:
-                print("insuffeciente fund")
+                self.balance = self.balance - amount
+                print(f"Withdraw: {amount}, New Balance: {self.balance}")
         else:
-            print("withdrawal amount must be positive")
-
-
-"""my_account = CurrentAccount("454545454", "Abdul")
-
-print(
-    f"Account Number:{my_account.account_number:} Holder:{my_account.account_holder_name}, Balance{my_account.balance}"
-)
-my_account.changeName("qambar")
-my_account.deposit(400)
-my_account.withdrawal(300)"""
+            print("ERROR: Withdrawal amount must be positive")
